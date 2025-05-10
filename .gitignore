@@ -1,0 +1,32 @@
+# DBT artifacts
+dbt_packages/
+dbt_modules/
+target/
+logs/
+
+# VSCode config (si usas este editor)
+.vscode/
+
+# Python virtual environments
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+
+# MacOS and Linux system files
+.DS_Store
+*.swp
+
+# Jupyter Notebooks checkpoints (si trabajas con notebooks)
+.ipynb_checkpoints/
+
+# DBT cloud local config (si aplicara)
+.profiles.yml
+profiles.yml
+
+# Personal or temporary files
+*.log
+*.bak
+*.tmp
