@@ -17,6 +17,21 @@ models:
           - not_null
       - name: name
         description: customer id
+        tests:
+          - elementary.column_anomalies:
+              column_anomalies:
+                - null_percent
+              time_bucket:
+                period: hour
+                count: 1
+              training_period:
+                period: hour
+                count: 1
+              detection_period:
+                period: day
+                count: 7
+              anomaly_sensitivity: 1
+              tags: ['elementary']
       - name: address
         description: address of the customer
       - name: nation_key
@@ -128,6 +143,16 @@ models:
         description: numeric representation of the shipping priority, zero being the default
       - name: comment
         description: '{{ doc("comment") }}'
+    
+    tests:
+     - elementary.dimension_anomalies:
+         tags: ["elementary", "dimensions"]
+         dimensions: status_code
+         time_bucket:
+            period: day
+            count: 1
+         config:
+            severity: warn
 
   - name: stg_tpch_part_suppliers
     description: staging layer for suppliers data

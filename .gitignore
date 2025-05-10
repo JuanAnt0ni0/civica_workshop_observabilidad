@@ -3,6 +3,7 @@ dbt_packages/
 dbt_modules/
 target/
 logs/
+package-lock.yml
 
 # VSCode config (si usas este editor)
 .vscode/
@@ -23,10 +24,12 @@ __pycache__/
 .ipynb_checkpoints/
 
 # DBT cloud local config (si aplicara)
-.profiles.yml
 profiles.yml
 
 # Personal or temporary files
 *.log
 *.bak
 *.tmp
+
+#Elementary-data
+edr_target/
